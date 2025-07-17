@@ -40,4 +40,10 @@ jobs:
 
     - name: Deploy to GitHub Pages
       id: deployment
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
       uses: actions/deploy-pages@v4
+      with:
+        target_branch: gh-pages
+        build_dir: docs/site/public
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
