@@ -1,0 +1,440 @@
+---
+import GDressler from "@assets/GDressler.webp";
+import Details4 from "@assets/Plantation.webp";
+import SFischer from "@assets/SFischer.webp";
+import Background2 from "@assets/TreeD_Landingpage_Header_02.webp";
+import Details1 from "@assets/forester-with-laptop.webp";
+import Details3 from "@assets/slider.webp";
+import Technologie from "@assets/trees-on-processor.webp";
+import Details2 from "@assets/twig.webp";
+import Link from "@components/ui/link.astro";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="relative -m-2 h-[calc(100vh-83px)]" id="top">
+    <Image
+      src={Background2}
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+    />
+
+    <div class="relative z-10 flex px-10 md:px-20 lg:px-32 h-full">
+      <div
+        class="flex flex-col items-start gap-2 md:gap-8 justify-center h-full text-left text-white flex-1"
+      >
+        <h1
+          class="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight md:whitespace-nowrap bg-black bg-opacity-0 rounded-lg px-4 py-2"
+          style="text-shadow: 0 4px 24px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,0.8);"
+        >
+          Die Wald- <br />Simulationsplattform
+          <!-- Live-Simulationen <br />
+          für Ihren Wald -->
+        </h1>
+        <div class="relative w-full max-w-2xl">
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 rounded-lg pointer-events-none"
+          >
+          </div>
+          <div class="relative p-4">
+            <p class="text-xl lg:text-2xl drop-shadow shadow-black text-white">
+              <!-- Was leistet Ihr Wald? Wie wird er sich entwickeln? <br />
+              Wie wirken sich Maßnahmen in Zukunft aus? 
+                <br class="mb-2" /> -->
+              Quantifizieren Sie die Leistungen Ihres Waldes tagesaktuell und erfassen
+              Sie Langzeitwirkung und Risiken geplanter Maßnahmen &mdash; in Echtzeit,
+              interaktiv, datenbasiert.
+            </p>
+          </div>
+        </div>
+        <!-- <Link href="https://dashboard.tree-d.com/register" variant="default"
+          >Los geht's</Link
+        > -->
+        <Link href="#quantification" variant="default">Los geht's</Link>
+        <p
+          class="text-base lg:text-lg max-w-xl italic drop-shadow shadow-black"
+          style="text-shadow: 0 8px 48px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,1);"
+        >
+          Dieses Projekt ist ein Ausgründungsprojekt des UFZ.<br />
+          <a href="#about-us" class="underline">Mehr erfahren</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Scroll Button -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
+      <a
+        aria-label="Scroll down"
+        href="#platform"
+        class="flex justify-center items-center w-16 h-16 bg-white bg-opacity-70 text-grey-700 rounded-full shadow-lg hover:bg-opacity-90"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="w-8 h-8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <div class="w-full px-6 lg:max-w-7xl m-auto pb-16">
+    <!-- Key Selling Points Section -->
+    <section id="platform" class="py-16 px-6">
+      <div class="mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-12">Was ist Tree-D?</h2>
+        <h2 class="text-xl text-gray-800 mb-12">
+          <!-- Tree-D ist -->
+          Wir entwickeln eine Cloud-Plattform, die mithilfe neuartiger Simulationstechnologien
+          die Leistungen Ihres Waldes detailliert berechnet und verständliche Prognosen
+          liefert — interaktiv, datenbasiert und in Echtzeit.
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <a
+            href="#quantification"
+            class="p-6 bg-green-600 rounded-lg shadow-md transition hover:bg-green-700"
+          >
+            <h3 class="text-xl font-semibold text-white">
+              Leistungen quantifizieren
+            </h3>
+            <p class="mt-4 text-gray-100">
+              Berech&shy;nen Sie zen&shy;trale
+              Öko&shy;system&shy;leis&shy;tungen wie Photo&shy;­synthese,
+              Holz&shy;­wachstum, CO<sub>2</sub>-Bindung, Wasser&shy;­bilanz und
+              Bio&shy;diver&shy;­sität — einfach, transparent und aktuell.
+            </p>
+          </a>
+          <a
+            href="#simulation"
+            class="p-6 bg-black rounded-lg shadow-md transition hover:bg-green-950"
+          >
+            <h3 class="text-xl font-semibold text-white">
+              Dynamik vorhersagen
+            </h3>
+            <p class="mt-4 text-gray-100">
+              Simu&shy;lieren Sie die Ent&shy;wick&shy;lung Ihres Waldes unter
+              ver&shy;schie&shy;denen Klima&shy;be&shy;din&shy;gungen und
+              Be&shy;wirt&shy;schafts&shy;maß&shy;nahmen, erkennen Sie
+              früh&shy;zeitig Risi&shy;ken und Po&shy;ten&shy;ziale.
+            </p>
+          </a>
+          <a
+            href="#comparison"
+            class="p-6 bg-green-600 rounded-lg shadow-md transition hover:bg-green-700"
+          >
+            <h3 class="text-xl font-semibold text-white">
+              Maßnahmen vergleichen
+            </h3>
+            <p class="mt-4 text-gray-100">
+              Evaluieren Sie Auswirkungen geplanter Maßnahmen, vergleichen Sie
+              Waldwirt&shy;schaftsstrategien, optimieren Sie Ihre
+              Entscheidungen.
+            </p>
+          </a>
+          <a
+            href="#integration"
+            class="p-6 bg-black rounded-lg shadow-md transition hover:bg-green-950"
+          >
+            <h3 class="text-xl font-semibold text-white">
+              Nahtlos integrieren
+            </h3>
+            <p class="mt-4 text-gray-100">
+              Inte&shy;grie&shy;ren Sie Tree-D pro&shy;blem&shy;los in Ihre
+              be&shy;ste&shy;hende Wald&shy;manage&shy;ment-Soft&shy;ware.
+              Über&shy;tragen und simu&shy;lieren Sie ge&shy;plante
+              Maß&shy;nahmen direkt. Binden Sie Daten von Sensoren und
+              LIDAR-Befliegungen ein.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="quantification" class="py-16 px-12">
+      <div class="mx-auto flex flex-col md:flex-row items-center">
+        <Image
+          src={Details2}
+          alt="Quantifizierung von Waldleistungen"
+          width={512}
+          class="w-[300px] h-auto rounded-lg shadow-md mb-8 md:mb-0 shrink-0 saturate-[0.8]"
+        />
+        <div class="md:ml-12 flex-grow">
+          <h3 class="text-3xl font-bold text-gray-800 mb-6">
+            Leistungen quantifizieren
+          </h3>
+          <p class="text-gray-600 text-lg mb-4">
+            Tree-D enthält eine vollständige digitale Abbildung Ihres Waldes und
+            seiner Prozesse. Mithilfe innovativer Simulationstechnologien und
+            Live-Integration von Wetter- und Bodendaten berechnet die Plattform
+            Leistungen Ihres Waldes in hoher räumlicher und zeitlicher
+            Auflösung. Das beinhaltet Ökosystemleistungen wie Photosynthese,
+            Holzwachstum, CO₂-Bindung, Wasserbilanz und Biodiversität.
+          </p>
+          <p class="text-gray-600 text-lg">
+            Die Ergebnisse werden intuitiv dargestellt und bieten Grundlagen zur
+            Evaluierung verschiedener Bewirtschaftungsweisen, sowie Daten zur
+            Ausstellung von Carbon Credits.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulation" class="bg-gray-100 py-16 px-12">
+      <div class="mx-auto flex flex-col md:flex-row items-center">
+        <Image
+          src={Details3}
+          alt="Simulation"
+          width={512}
+          class="w-[300px] h-auto rounded-lg shadow-md mb-8 md:mb-0 shrink-0 saturate-[0.8]"
+        />
+        <div class="md:ml-12 flex-grow">
+          <h3 class="text-3xl font-bold text-gray-800 mb-6">
+            Dynamik vorhersagen
+          </h3>
+          <p class="text-gray-600 text-lg mb-4">
+            Tree-D ermöglicht es Ihnen, die Entwicklung Ihres Waldes unter
+            verschiedenen Klimaszenarien realitätsnah zu simulieren. Ob unter
+            erhöhten Temperaturen, Trockenheit, oder Schädlingsbefall – Sie
+            erhalten einen fundierten Ausblick auf die zukünftige
+            Leistungsfähigkeit Ihres Bestands und können gezielt auf
+            Herausforderungen reagieren.
+          </p>
+          <p class="text-gray-600 text-lg">
+            Die Bandbreite möglicher Entwicklungen wird transparent dargestellt
+            und dient der Ableitung praxisnaher Risikoindikatoren. So schaffen
+            Sie eine belastbare Grundlage für strategische Entscheidungen – von
+            der Planung einzelner Maßnahmen bis zur langfristigen
+            Investitionsplanung.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparison" class="py-16 px-12">
+      <div class="mx-auto flex flex-col md:flex-row items-center">
+        <Image
+          src={Details4}
+          alt="Pflanzung"
+          width={512}
+          class="w-[300px] h-auto rounded-lg shadow-md mb-8 md:mb-0 shrink-0 saturate-[0.8]"
+        />
+        <div class="md:ml-12 flex-grow">
+          <h3 class="text-3xl font-bold text-gray-800 mb-6">
+            Maßnahmen vergleichen
+          </h3>
+          <p class="text-gray-600 text-lg mb-4">
+            Ob Baumartenwahl, Durchforstung oder Holzernte: Das integrierte
+            Simulationsmodell von Tree-D erlaubt es, Nutzen und Risiken
+            forstwirtschaftlicher Maßnahmen zu simulieren, ihre Auswirkungen zu
+            bewerten und Strategien objektiv zu vergleichen. Damit unterstützt
+            Tree-D Sie dabei, eine optimale Strategie zur Erreichung Ihrer
+            Bewirtschaftungsziele zu identifizieren.
+          </p>
+          <p class="text-gray-600 text-lg">
+            Sowohl konventionelle als auch alternative Bewirtschaftungsweisen
+            können abgebildet werden. So entstehen datenbasierte Grundlagen für
+            Kommunikation mit externen Partnern und der Öffentlichkeit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="integration" class="bg-gray-100 py-16 px-12">
+      <div class="mx-auto flex flex-col md:flex-row items-center">
+        <Image
+          src={Details1}
+          alt="Integration"
+          width={512}
+          class="w-[300px] h-auto rounded-lg shadow-md mb-8 md:mb-0 shrink-0 saturate-[0.8]"
+        />
+        <div class="md:ml-12 flex-grow">
+          <h3 class="text-3xl font-bold text-gray-800 mb-6">
+            Nahtlos integrieren
+          </h3>
+          <p class="text-gray-600 text-lg mb-4">
+            Das Tree-D-Dashboard lässt sich problemlos in bestehende
+            Waldmanagement-Software integrieren und bildet geplante waldbauliche
+            Maßnahmen direkt in Simulationen ab. Zudem lassen sich Daten von
+            Sensoren und LIDAR-Befliegungen einbinden, um den Zustand Ihres
+            Waldes hochauflösend und bis auf Einzelbaumebene auszuwerten.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="py-16 px-6 pb-16 bg-green-600 w-full m-auto" id="technology">
+    <div
+      class="mx-auto flex flex-col md:flex-row items-center max-w-2xl lg:max-w-6xl gap-8"
+    >
+      <div class="md:ml-12 flex-grow">
+        <h3 class="text-3xl font-bold text-white mb-6">Technologie</h3>
+        <p class="text-white text-lg mb-4">
+          Tree-D setzt auf grundlegend neu entwickelte Technologien zur
+          realitätsnahen Simulation von Waldökosystemen – speziell entwickelt
+          für die komplexen Anforderungen moderner Forstwirtschaft.
+        </p>
+        <p class="text-white text-lg mb-4">
+          Klassische und rein KI-getriebene Waldmodelle simulieren
+          Wachstumsprozesse auf stark vereinfachte Weise oder projizieren
+          Beobachtungen vergangener Jahre in die Zukunft. Das ist oft ungenau
+          oder unzuverlässig, weil sich das Klima wandelt.
+        </p>
+        <p class="text-white text-lg mb-4">
+          Tree-D verfolgt einen neuartigen hybriden Ansatz: Es lernt
+          pflanzenphysiologische Prozesse direkt aus realen Walddaten – und kann
+          so auch unter veränderten Umweltbedingungen zuverlässige Vorhersagen
+          treffen. Dabei verbessert sich Tree-D kontinuierlich selbst: Je mehr
+          Daten zur Verfügung stehen, desto präziser und aussagekräftiger werden
+          die Simulationen.
+        </p>
+      </div>
+      <Image
+        src={Technologie}
+        alt="CO2 & O2 Tracking"
+        width={512}
+        class="w-[300px] h-auto rounded-lg shadow-md mb-8 md:mb-0 shrink-0 saturate-[1]"
+      />
+    </div>
+  </section>
+  <section class="py-16 bg-white text-center" id="about-us">
+    <div class="mx-auto max-w-5xl px-6">
+      <!-- Header -->
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Über uns</h2>
+      <!-- Subtitle -->
+      <p class="text-gray-600 text-lg mb-4">
+        Tree-D ist eine Ausgründungsinitiative des Helmholtz-Zentrums für
+        Umweltforschung – UFZ in Leipzig mit dem Ziel, über 30 Jahre Erfahrung
+        in der Waldmodellierung für die forstliche Praxis nutzbar zu machen.
+      </p>
+      <p class="text-gray-600 text-lg mb-4">
+        Wir verfügen über umfangreiche Expertise in der Umwelt- und
+        sozioökonomischen Modellierung und haben zahlreiche Forschungsprojekte
+        zur Modellierung von Waldökosystemen vorangetrieben. Nach jahrelanger
+        engagierter wissenschaftlicher Arbeit wollen wir nun das praktische
+        Potenzial unserer Arbeit heben.
+      </p>
+      <p class="text-gray-600 text-lg mb-12">
+        Momentan entwickeln wir einen Prototypen für die Tree-D-Plattform. <br
+        />Wir werden gefördert duch das transfun-Programm des Helmholtz-Zentrums
+        für Umweltforschung - UFZ.
+      </p>
+      <!-- Founders -->
+      <div class="founders flex flex-col sm:flex-row justify-center gap-32">
+        <!-- Founder 1 -->
+        <div class="founder text-center">
+          <Image
+            src={SFischer}
+            alt="Dr. Samuel Fischer"
+            width={512}
+            class="mx-auto w-64 h-64 rounded-full object-cover mb-4"
+          />
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">
+            Dr. Samuel Fischer
+          </h3>
+          <p class="text-gray-600">
+            ist Mathematiker mit Spezialisierung auf ökologische Modellierung,
+            Softwaredesign und computergestützte Statistik. Vor dem Start von
+            Tree-D konzentrierte sich seine Forschung auf die effiziente
+            Integration von Daten in komplexe ökologische Modelle. Als einer der
+            Hauptentwickler des Waldmodells FORMIND arbeitete er an der
+            Entwicklung neuer Ansätze zur Parametrisierung von Waldmodellen und
+            deren Verknüpfung mit Fernerkundungsdaten.
+          </p>
+        </div>
+        <!-- Founder 2 -->
+        <div class="founder text-center">
+          <Image
+            src={GDressler}
+            alt="Founder 2"
+            width={512}
+            class="mx-auto w-64 h-64 rounded-full object-cover mb-4"
+          />
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">
+            Dr. Gunnar Dreßler
+          </h3>
+          <p class="text-gray-600">
+            ist Systemwissenschaftler mit Fokus auf agentenbasierter
+            Modellierung und Biomathematik. In seiner Forschung beschäftigt er
+            sich mit dem Verständnis der Dynamik komplexer sozial-ökologischer
+            Systeme, insbesondere der Analyse von Kipppunkten und der
+            Auswirkungen von Politikinstrumenten auf Landnutzungsstrategien. Ein
+            Schwerpunkt liegt dabei auf der adäquaten Darstellung menschlicher
+            Entscheidungen und Managementstrategien in Computermodellen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-200 text-center" id="contact">
+    <div class="mx-auto max-w-4xl">
+      <!-- Call to Action -->
+      <div class="cta mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Interessiert?</h2>
+        <p class="text-gray-600 text-lg mb-6">
+          <!-- Werden Sie Teil der Tree-D-Community und probieren Sie es aus! -->
+          Schreiben Sie uns Ihre Fragen. Wir sind gerne für Sie da!
+        </p>
+        <!-- <Link href="https://dashboard.tree-d.com/register" size="lg"
+          >Registrieren</Link
+        > -->
+        <Link href="mailto:samuel.fischer@ufz.de" size="lg"
+          >Kontaktieren Sie uns</Link
+        >
+      </div>
+      <!-- Divider -->
+      <!-- <div class="divider my-8">
+        <hr class="border-t border-white w-1/3 mx-auto" />
+      </div> -->
+      <!-- Contact -->
+      <!-- <div class="contact">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Fragen?</h3>
+        <p class="text-gray-600 text-lg">
+          Kontaktieren Sie uns jederzeit über
+          <a
+            href="mailto:samuel.fischer@ufz.de"
+            class="text-blue-600 font-semibold hover:underline"
+          >
+            samuel.fischer@ufz.de
+          </a>
+        </p>
+      </div> -->
+    </div>
+  </section>
+
+  <style scoped>
+    .mask-fade {
+      mask-image:
+        linear-gradient(
+          to right,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        ),
+        /* Left and Right */
+          linear-gradient(
+            to bottom,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+          );
+      /* Top and Bottom */
+      mask-composite: intersect;
+      /* Ensure both masks combine */
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+    }
+  </style>
+</Layout>

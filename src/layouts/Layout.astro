@@ -1,0 +1,182 @@
+---
+import TransfunLogo from "@assets/transfun-marke-RGB.webp";
+import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource-variable/bricolage-grotesque";
+import "@fontsource-variable/inter/index.css";
+import { SEO } from "astro-seo";
+import { Image } from "astro:assets";
+import { availableLocales, defaultLang, useTranslations } from "../i18n/ui";
+// import i18n from "astro:i18n";
+
+export interface Props {
+  title?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site,
+).toString();
+
+const { title } = Astro.props;
+
+const t = useTranslations(
+  Astro.currentLocale as (typeof availableLocales)[number],
+);
+
+const makeTitle = title ? title + " | " + "tree-d" : t("seo.title");
+
+const otherLocales = availableLocales.filter(
+  (locale) => locale !== Astro.currentLocale,
+);
+const alternatives = otherLocales.map((locale) => ({
+  href: new URL(locale === defaultLang ? "" : locale, Astro.site),
+  hrefLang: locale,
+}));
+---
+
+<html lang={Astro.currentLocale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <SEO
+      title={makeTitle}
+      description={t("seo.desc")}
+      canonical={canonicalURL}
+      languageAlternates={alternatives}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: t("seo.desc"),
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "tree-d Homepage Screenshot",
+        },
+        optional: {
+          locale: Astro.currentLocale,
+          // localeAlternate: otherLocales,
+          siteName: "tree-d",
+        },
+      }}
+    />
+  </head>
+  <body class="overflow-none">
+    <main class="flex flex-col h-screen w-screen min-h-0">
+      <Navbar class="z-20 w-full" />
+      <div
+        class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden relative scroll-smooth"
+      >
+        <div
+          class="w-full sticky top-0 z-10 left-0 bg-gradient-to-b from-gray-300 to-transparent h-1 flex-0 shrink-0"
+        >
+        </div>
+        <slot />
+        <footer class="footer bg-green-600 text-white py-10">
+          <div
+            class="w-full px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <!-- Navigation Links -->
+            <div class="footer-links text-center md:text-left">
+              <h3 class="text-lg font-semibold text-gray-100 mb-4">
+                {t("footer.directlinks")}
+              </h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#top" class="text-white hover:underline">Home</a>
+                </li>
+                <li>
+                  <a href="#platform" class="text-white hover:underline">
+                    {t("nav.platform")}
+                  </a>
+                </li>
+                <li>
+                  <a href="#technology" class="text-white hover:underline">
+                    {t("nav.technology")}
+                  </a>
+                </li>
+                <li>
+                  <a href="#about-us" class="text-white hover:underline">
+                    {t("nav.aboutus")}
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" class="text-white hover:underline">
+                    {t("nav.contact")}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Impressum Column 1 -->
+            <div
+              class="impressum text-sm text-gray-200 text-center md:text-left"
+            >
+              <h3 class="text-lg font-semibold text-gray-100 mb-4">
+                {t("footer.imprint")}
+              </h3>
+              <p>{t("institution")}</p>
+              <p>{t("address.street")}</p>
+              <p>{t("address.city")}</p>
+              <p>{t("address.country")}</p>
+              <p>
+                {t("email")}
+                <a href="info@ufz.de" class="text-white hover:underline">
+                  info@ufz.de
+                </a>
+              </p>
+            </div>
+
+            <!-- Impressum Column 2 -->
+            <div
+              class="impressum text-sm text-gray-200 text-center md:text-left"
+            >
+              <h4 class="text-sm font-semibold text-gray-100 mb-2">
+                {t("representation.heading")}
+              </h4>
+
+              <p>
+                {t("representation.science")}
+              </p>
+              <p>{t("representation.administration")}</p>
+              <p>{t("representation.register")}</p>
+              <p>{t("representation.tax_id")}</p>
+              <p>{t("representation.supervisory_board")}</p>
+              <br />
+              <h4 class="text-sm font-semibold text-gray-100 mb-2">
+                {t("content_representation.heading")}
+              </h4>
+              <p>{t("content_representation.names")}</p>
+              <p>{t("institution")}</p>
+              <p>{t("content_representation.department")}</p>
+              <p>
+                {t("email")}
+                <a
+                  href="mailto:samuel.fischer@ufz.de"
+                  class="text-white hover:underline"
+                >
+                  samuel.fischer@ufz.de
+                </a>
+              </p>
+            </div>
+          </div>
+          <!-- Footer Bottom -->
+          <div
+            class="funding-logo flex px-10 md:px-20 lg:px-32"
+          >
+            <Image
+              src={TransfunLogo}
+              alt="transfun Logo"
+              class="w-[200px] h-auto"
+            />
+          </div>
+          <div class="copyright mt-8 text-gray-100 text-xs text-center">
+            &copy; {new Date().getFullYear()}
+            {t("institution")}. {t("copyright.rights_reserved")}
+          </div>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
