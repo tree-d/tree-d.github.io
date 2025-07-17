@@ -33,11 +33,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-    - name: Upload artifact for preview
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./dist
-
     - name: Deploy to GitHub Pages
       id: deployment
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
