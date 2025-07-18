@@ -10,7 +10,7 @@ export const ui = {
     "nav.aboutus": "About Us",
     "nav.contact": "Contact",
     "seo.desc":
-      "tree-d is a service to simulate forest dynamics and quantify ecosystem services.",
+      "Tree-D is a service to simulate forest dynamics and quantify ecosystem services.",
     "seo.title": "Tree-D - The Forest Simulation Platform",
     "nav.login": "Login",
     "nav.register": "Register",
@@ -41,8 +41,8 @@ export const ui = {
     "nav.aboutus": "Über uns",
     "nav.contact": "Kontakt",
     "seo.desc":
-      "Tree-D ist ein Dienst, um Walddynamik zu simulieren und Ökosystemdienstleistungen zu quantifizieren.",
-    "seo.title": "Tree-D - Die Waldsimulationsplattform",
+      "Tree-D liefert detaillierte Berechnungen der Leistungen Ihres Waldes und verständliche Prognosen — interaktiv, datenbasiert und in Echtzeit.",
+    "seo.title": "Tree-D – Die Waldsimulationsplattform",
     "nav.login": "Anmelden",
     "nav.register": "Registrieren",
     "nav.register_contact": "Kontaktieren Sie uns",

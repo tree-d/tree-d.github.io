@@ -25,7 +25,7 @@ const t = useTranslations(
   Astro.currentLocale as (typeof availableLocales)[number],
 );
 
-const makeTitle = title ? title + " | " + "tree-d" : t("seo.title");
+const makeTitle = title ? title + " | " + "Tree-D" : t("seo.title");
 
 const otherLocales = availableLocales.filter(
   (locale) => locale !== Astro.currentLocale,
@@ -53,12 +53,12 @@ const alternatives = otherLocales.map((locale) => ({
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "tree-d Homepage Screenshot",
+          alt: "Tree-D Homepage Screenshot",
         },
         optional: {
           locale: Astro.currentLocale,
-          // localeAlternate: otherLocales,
-          siteName: "tree-d",
+          localeAlternate: otherLocales,
+          siteName: "Tree-D – die Waldsimulationsplattform",
         },
       }}
     />
@@ -162,9 +162,7 @@ const alternatives = otherLocales.map((locale) => ({
             </div>
           </div>
           <!-- Footer Bottom -->
-          <div
-            class="funding-logo flex px-10 md:px-20 lg:px-32"
-          >
+          <div class="funding-logo flex px-10 md:px-20 lg:px-32">
             <Image
               src={TransfunLogo}
               alt="transfun Logo"
